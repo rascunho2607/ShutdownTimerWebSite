@@ -351,29 +351,19 @@ setInterval(() => {
 /* ── Download button interaction ─────────────────────────────── */
 const downloadBtn = document.getElementById('downloadBtn');
 if (downloadBtn) {
-  downloadBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    const originalHTML = this.innerHTML;
-
-    // Simulate download start
+  downloadBtn.addEventListener('click', function () {
     const icon = this.querySelector('.btn-dl-main');
     const sub  = this.querySelector('.btn-dl-sub');
-    if (icon) icon.textContent = 'Preparando download...';
-    if (sub)  sub.textContent  = 'Aguarde um momento';
+    const origMain = icon ? icon.textContent : '';
+    const origSub  = sub  ? sub.textContent  : '';
 
-    this.style.opacity = '0.8';
-    this.style.pointerEvents = 'none';
-
-    setTimeout(() => {
-      if (icon) icon.textContent = '✓ Download iniciado!';
-      if (sub)  sub.textContent  = 'shutdown_timer.exe';
-    }, 900);
+    if (icon) icon.textContent = '✓ Download iniciado!';
+    if (sub)  sub.textContent  = 'ShutdownTimer.exe';
 
     setTimeout(() => {
-      this.innerHTML = originalHTML;
-      this.style.opacity = '1';
-      this.style.pointerEvents = 'auto';
-    }, 3200);
+      if (icon) icon.textContent = origMain;
+      if (sub)  sub.textContent  = origSub;
+    }, 3000);
   });
 }
 
