@@ -121,6 +121,83 @@
         <span class="section-tag">Funcionalidades</span>
         <h2 class="section-title">Tudo que você precisa,<br/>nada que você não precisa</h2>
       </div>
+
+      <!-- ══════════════════════════════════════════════════════════
+           CARDS DE DESTAQUE — as 2 features mais poderosas
+           ══════════════════════════════════════════════════════════ -->
+      <div class="feat-highlight-row">
+
+        <!-- Card 1: Agendar por horário -->
+        <div class="feat-highlight-card" data-delay="0">
+          <div class="feat-hl-top">
+            <div class="feat-hl-icon-wrap">🕐</div>
+            <span class="feat-hl-badge">Prático</span>
+          </div>
+          <h3>Desligar em horário específico</h3>
+          <p>
+            Não precisa calcular quantos minutos faltam. Mude para o modo
+            <strong>Horário</strong>, digite <strong>23:30</strong> e pronto —
+            o app calcula o tempo restante automaticamente e dispara a ação na hora exata.
+          </p>
+          <div class="feat-hl-demo">
+            <div class="hl-mode-tabs">
+              <span class="hl-tab">⏱ Contagem</span>
+              <span class="hl-tab active">🕐 Horário</span>
+            </div>
+            <div class="hl-clock-input">
+              <span class="hl-clock-seg">23</span>
+              <span class="hl-clock-colon">:</span>
+              <span class="hl-clock-seg">30</span>
+            </div>
+            <div class="hl-clock-info">→ em <span id="hlMinsLeft">--</span> min &nbsp;·&nbsp; às 23:30</div>
+          </div>
+        </div>
+
+        <!-- Card 2: Shutdown condicional -->
+        <div class="feat-highlight-card feat-highlight-card--purple" data-delay="120">
+          <div class="feat-hl-top">
+            <div class="feat-hl-icon-wrap purple">🧠</div>
+            <span class="feat-hl-badge purple">Inteligente</span>
+          </div>
+          <h3>Desligar quando terminar</h3>
+          <p>
+            Sem hora exata? Configure <em>condições</em> e o PC desliga sozinho assim que
+            elas forem satisfeitas — ideal para renders, downloads e encodes longos.
+          </p>
+          <div class="feat-hl-conditions">
+            <div class="cond-row cond-active">
+              <span class="cond-icon">📥</span>
+              <div class="cond-body">
+                <span class="cond-label">Download terminar</span>
+                <span class="cond-sub">monitora a taxa de rede até zerar</span>
+              </div>
+              <span class="cond-pill">
+                <span class="cond-dot"></span>ativo
+              </span>
+            </div>
+            <div class="cond-row">
+              <span class="cond-icon">🖥</span>
+              <div class="cond-body">
+                <span class="cond-label">CPU cair abaixo de 10%</span>
+                <span class="cond-sub">render / encode terminou</span>
+              </div>
+              <span class="cond-check">✓</span>
+            </div>
+            <div class="cond-row">
+              <span class="cond-icon">⚙</span>
+              <div class="cond-body">
+                <span class="cond-label">Processo fechar</span>
+                <span class="cond-sub">ex: blender.exe, handbrake.exe</span>
+              </div>
+              <span class="cond-check">✓</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- ══════════════════════════════════════════════════════════ -->
+
+      <!-- Grid de features comuns -->
       <div class="features-grid">
 
         <div class="feat-card" data-delay="0">
