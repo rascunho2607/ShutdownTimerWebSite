@@ -490,6 +490,32 @@ document.addEventListener('keydown', e => {
 });
 
 
+/* ── Clock card: minutos restantes até 23:30 ────────────────── */
+function updateHlMins() {
+  const el = document.getElementById('hlMinsLeft');
+  if (!el) return;
+  const now    = new Date();
+  const target = new Date();
+  target.setHours(23, 30, 0, 0);
+  if (target <= now) target.setDate(target.getDate() + 1); // próximo dia
+  const diff = Math.round((target - now) / 60000);
+  el.textContent = diff;
+}
+updateHlMins();
+setInterval(updateHlMins, 30000); // atualiza a cada 30s
+
+/* ── Highlight card reveal ───────────────────────────────────── */
+const hlObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const delay = parseInt(entry.target.dataset.delay || '0');
+      setTimeout(() => entry.target.classList.add('visible'), delay);
+      hlObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.feat-highlight-card').forEach(el => hlObserver.observe(el));
+
 /* ── Init ────────────────────────────────────────────────────── */
 console.log('%c⏻ ShutdownTimer', 'color:#4f8ef7;font-family:monospace;font-size:1.4rem;font-weight:bold;');
 console.log('%cOpen source. Zero telemetria. MIT License.', 'color:#7b82a8;font-family:monospace;');
